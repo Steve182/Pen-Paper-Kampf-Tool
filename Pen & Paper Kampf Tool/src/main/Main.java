@@ -18,7 +18,7 @@ public class Main extends Application
 			MainPresenter mainP = this.initApplication();
 			mainP.showDisplayView();
 			
-			Scene scene = new Scene(mainP.getView(), 500, 500);
+			Scene scene = new Scene(mainP.getView(), 600, 500);
 			stage.setScene(scene);
 			stage.setTitle("Pen & Paper Kampf Tool");
 			stage.show();

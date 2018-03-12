@@ -2,6 +2,7 @@ package main;
 
 import add.AddPresenter;
 import display.DisplayPresenter;
+import model.Preset;
 
 public class MainPresenter
 	{
@@ -17,6 +18,11 @@ public class MainPresenter
 		public void showAddView()
 		{
 			view.setContent(addP.getView());
+		}
+		
+		public void addPresetButton(Preset p)
+		{
+			this.displayP.addPresetButton(p);
 		}
 
 		//getter/setter-----------------------------------------------

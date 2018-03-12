@@ -2,6 +2,7 @@ package display;
 
 import main.MainPresenter;
 import model.Model;
+import model.Preset;
 
 public class DisplayPresenter
 	{
@@ -9,6 +10,16 @@ public class DisplayPresenter
 		private Model model;
 		
 		private MainPresenter mainP;
+		
+		public void showSelectedPreset()
+			{
+				
+			}
+		
+		public void addPresetButton(Preset p)
+		{
+			this.view.addPresetButton(p);
+		}
 		
 		
 		//getter/setter----------------------------------------

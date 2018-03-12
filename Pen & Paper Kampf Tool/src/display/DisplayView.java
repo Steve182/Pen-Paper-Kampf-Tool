@@ -2,16 +2,19 @@ package display;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import model.Entity;
+import model.Preset;
 
 public class DisplayView extends BorderPane
 	{
 		private DisplayPresenter displayP;
+		private VBox presetButtons;
 				
 		public DisplayView(DisplayPresenter displayP)
 		{
@@ -39,7 +42,18 @@ public class DisplayView extends BorderPane
 			bottomBox.getChildren().addAll(nextEntity, nextPreset);
 			main.getChildren().addAll(box, bottomBox);
 			setCenter(main);
+			//-------------------------------------
+			presetButtons = new VBox();
+			ScrollPane sp = new ScrollPane(presetButtons);
+			setLeft(sp);
 		}
+		
+		public void addPresetButton(Preset p)
+			{
+				Button b = new Button(p.getPresetName());
+				b.setOnAction(e -> displayP.showSelectedPreset());
+				presetButtons.getChildren().add(b);
+			}
 		
 		//getter/setter-------------------------------------------
 		public DisplayPresenter getDisplayP()
@@ -51,4 +65,15 @@ public class DisplayView extends BorderPane
 			{
 				this.displayP = displayP;
 			}
+
+		public VBox getPresetButtons()
+			{
+				return presetButtons;
+			}
+
+		public void setPresetButtons(VBox presetButtons)
+			{
+				this.presetButtons = presetButtons;
+			}
+		
 	}

@@ -6,7 +6,6 @@ public class Entity
 		private int ini;
 		private int hp;
 		
-		
 		//getter/setter
 		public String getName()
 			{
